@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me';
+import { AppConfigService } from '../../config/app-config.service';
 
 type ProfileType = {
   givenName?: string,
@@ -27,7 +26,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getProfile() {
-    this.http.get(GRAPH_ENDPOINT)
+    this.http.get(AppConfigService.settings.graph.uri)
       .subscribe(profile => {
         this.profile = profile;
       });

@@ -1,0 +1,17 @@
+{
+  "api":{
+    "uri": "http://localhost:7090/api/MiddleTierAPI"
+  },
+  "graph":{
+    "uri": "https://graph.microsoft.com/v1.0/me"
+  },
+  "msal":{
+    "clientId": "",
+    "authority": "https://login.microsoftonline.com/",
+    "redirectUri": "http://localhost:4200",
+    "protectedResource": [
+      ["https://graph.microsoft.com/v1.0/me", ["user.read"]],
+      ["http://localhost:7090/api", ["api://"]]
+    ]
+  }
+}
